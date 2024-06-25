@@ -39,7 +39,7 @@ credentials = ClientCredentials(
 
 CUSTOMER_PHONE_NUMBER = '+34555555555'
 
-simswap_client = SIMSwap(credentials, CUSTOMER_PHONE_NUMBER)
+simswap_client = SIMSwap(client=credentials, phone_number=CUSTOMER_PHONE_NUMBER)
 ```
 
 ###### Performing HTTP requests (without SDK)
@@ -202,7 +202,7 @@ app = Flask(__name__)
 def simswap_callback():
   code = request.args.get('code')
   phoneNumber = request.args.get('state')
-  simswap_client = SIMSwap(credentials, auth_code=code)
+  simswap_client = SIMSwap(client=credentials, auth_code=code)
 
 if __name__ == '__main__':
   app.run()

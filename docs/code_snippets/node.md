@@ -39,7 +39,7 @@ const credentials: ClientCredentials(
 
 const CUSTOMER_PHONE_NUMBER = '+34555555555'
 
-const simswapClient = new SIMSwap(credentials, CUSTOMER_PHONE_NUMBER)
+const simswapClient = new SIMSwap(credentials, null, CUSTOMER_PHONE_NUMBER)
 ```
 
 ###### Performing HTTP requests (without SDK)
@@ -240,7 +240,7 @@ const port = 3000
 app.get('/simswap-callback', (req, res) => {
     const code = req.query.code
     const phoneNumber = req.query.state
-    const simswapClient = new SIMSwap.fromAuthCode(credentials, code)
+    const simswapClient = new SIMSwap(credentials, code)
 })
 
 app.listen(port, () => {

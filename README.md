@@ -28,6 +28,6 @@ This sample app uses the Telefónica's Open Gateway Sandbox and its SDK so you d
 - [Developer Hub](https://opengateway.telefonica.com/en/developer-hub)
 
 Once you are onboarded, follow these steps:
-1. Access the Sandbox and register your application, you will credentials for it to use Sandbox's SDK and/or API gatewway: a client_id and a client_secret
+1. Access the Sandbox and register your application, you will get credentials for it to use Sandbox's SDK and/or API gatewway: a client_id and a client_secret
 2. Clone the sample app repository, and follow the instructions in the README file to setup your app credentials and run the app
 3. Test the app with any phone number for mock responses, or with a real mobile line you own and have asked to be added to the whitelist, if you want to test the API on one of our actual operators
