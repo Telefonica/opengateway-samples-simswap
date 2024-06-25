@@ -28,7 +28,7 @@ Since Open Gateway authentication is 3-legged, meaning it identifies the applica
 
 Also note that when using an SDK, each service class will implicitly be aware of the proper service API purpose to use. Otherwise, in case your are not using an SDK, you will need to know the API purpose, as displayed by the channel partner on the API product discovery and ordering process, and provide it in the authentication request, as shown in the samples below. 
 
-##### Using a channel partner's SDK
+###### Using a channel partner's SDK
 ```Node
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
 
@@ -42,7 +42,7 @@ const CUSTOMER_PHONE_NUMBER = '+34555555555'
 const simswapClient = new SIMSwap(credentials, CUSTOMER_PHONE_NUMBER)
 ```
 
-##### Performing HTTP requests (without SDK)
+###### Performing HTTP requests (without SDK)
 ```JavaScript
 // First step:
 // Perform an authorization request
@@ -106,14 +106,14 @@ fetch("https://opengateway.aggregator.com/token", requestOptions)
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
-##### Using a channel partner's SDK
+###### Using a channel partner's SDK
 ```Node
 let result = await simswapClient.retrieveDate()
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
 
-##### Performing HTTP requests (without SDK)
+###### Performing HTTP requests (without SDK)
 ```JavaScript
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
@@ -256,7 +256,7 @@ This step is pretty much the same that in the case of the [backend flow](#perfor
 const urlencoded = new URLSearchParams();
 urlencoded.append("grant_type", "authorization_code");
 urlencoded.append("code", code);
-urlencoded.append("redirect_uri", "your-backend-callback-url");
+urlencoded.append("redirect_uri", yourBackendCallbackUrl);
 
 const requestOptions = {
   method: "POST",
@@ -277,13 +277,13 @@ fetch("https://opengateway.aggregator.com/token", requestOptions)
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
-##### Using a channel partner's SDK
+###### Using a channel partner's SDK
 ```Node
 let result = await simswapClient.retrieveDate(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
 
-##### Performing HTTP requests (without SDK)
+###### Performing HTTP requests (without SDK)
 
 Once you app has gotten an access token, the way to call the service API is exactly the same as shown in the [backend flow](#performing-http-requests-without-sdk-1).

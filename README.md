@@ -14,7 +14,7 @@ Most likely, this API will be consumed in a backend flow, since it is the applic
 
 The code snippets are just examples and may need to be adapted to your specific use case:
 - [Node.js](./docs/code_snippets/node.md)
-- Python
+- [Python](./docs/code_snippets/python.md)
 - Java
 
 ## Sample app
